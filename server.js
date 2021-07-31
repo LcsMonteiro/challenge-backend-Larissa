@@ -1,6 +1,5 @@
-const app = require("./src/app")
+const app = require("./src/app");
 
-const port = process.env.PORT || 5050
+const port = process.env.PORT || 5050;
 
-app.listen(port, () =>
-    console.log("Server connect."))
+app.listen(port, () => console.log("Server connect."));
