@@ -1,0 +1,64 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Challenge Backend",
+    "description": "Esta aplicação é uma API que fornece informações de localizaçao de parceiros do Zé Delivery",
+    "termsOfService": "https://github.com/ZXVentures/ze-code-challenges/blob/master/backend_pt.md",
+    "contact": {
+      "email": "lcsmonteiiro@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+    "servers": [
+    {
+      "url": "http://localhost:5050/partners/",
+      "description": "API test"
+    }
+  ],
+  "paths": {
+    "/create":{
+      "post":{
+        "sumary": "Cadastro de novos parceiros",
+        "description": " Essa rota é resposável por cadastrar um novo parceiro.",
+        "tags": ["Partners"],
+        "requestBody":{
+          "content":{
+            "application/json":{
+              "schema":{
+
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas":{
+      "Partner":{
+        "type":"object",
+        "properties":{
+          "tradingName":{
+            "type": "string"
+          },
+          "ownerName":{
+            "type":"string"
+          },
+          "document":{
+            "type": "string",
+            "unique":true
+          },
+          "coverageArea":{
+            "type": {"string"},
+            "location": "multipolygonSchema"
+          },
+          "address":{
+            "type": {"string"},
+            "location":"pointSchema"
+          }
+        }
+
+      }
+    }
+  }
+}
