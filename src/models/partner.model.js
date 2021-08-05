@@ -56,22 +56,4 @@ const partnerSchema = new mongoose.Schema({
   },
 });
 
-/* multipolygonSchema.pre("save", async (req, res) => {
-  const loc = await geocoder.geocode(this.coverageArea);
-  this.location = {
-    type: "MultiPolygon",
-    coordinates: [loc[0].longitude, loc[0].latitude],
-    formattedAddress: loc[0].formattedAddress,
-  };
-});
-
-pointSchema.pre("save", async (req, res) => {
-  const loc = await geocoder.geocode(this.address);
-  this.location = {
-    type: "Point",
-    coordinates: [loc[0].longitude, loc[0].latitude],
-    formattedAddress: loc[0].formattedAddress,
-  };
-}); */
-
 module.exports = mongoose.model("partner", partnerSchema);

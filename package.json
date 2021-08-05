@@ -3,11 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "nodemonConfig": {
+    "ext": "js",
+    "ignore": [
+      "swagger*.js"
+    ]
+  },
   "scripts": {
     "start": "nodemon server.js",
     "test": "jest",
     "lint": "eslint src/** test/** --fix",
-    "secure-mode": "jest --watch --verbose=true"
+    "secure-mode": "jest --watch --verbose=true",
+    "swagger-autogen": "node swagger.js"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +25,7 @@
     "express": "^4.17.1",
     "mongoose": "^5.13.5",
     "nodemon": "^2.0.12",
+    "swagger-autogen": "^2.11.1",
     "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {

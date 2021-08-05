@@ -1,0 +1,411 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Challenge Backend - Partners",
+    "description": "Esta aplicação é uma API que fornece informações de localizaçao de parceiros do Zé Delivery.",
+    "termsOfService": "https://github.com/ZXVentures/ze-code-challenges/blob/master/backend_pt.md",
+    "contact": {
+      "email": "lcsmonteiiro@gmail.com"
+    }
+  },
+  "host": "localhost:5050",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Partner",
+      "description": "Endpoints"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/create": {
+      "post": {
+        "tags": [
+          "Partner"
+        ],
+        "description": "Endpoint para criar parceiro.",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "tradingName": {
+                  "example": "any"
+                },
+                "ownerName": {
+                  "example": "any"
+                },
+                "document": {
+                  "example": "any"
+                },
+                "coverageArea": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Parceiro criado",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "500": {
+            "description": "Erro interno do servidor.",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/list": {
+      "get": {
+        "tags": [
+          "Partner"
+        ],
+        "description": "Endpoint para listar todos os parceiros.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Parceiros listados.",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/find/{id}": {
+      "get": {
+        "tags": [
+          "Partner"
+        ],
+        "description": "Endpoint para pesquisar parceiro pelo id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID do usuário."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Parceiro encontrado.",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "404": {
+            "description": "Parceiro não encontrado.",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "500": {
+            "description": "Erro interno do servidor.",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/nearest": {
+      "get": {
+        "tags": [
+          "Partner"
+        ],
+        "description": "Endpoint para buscar parceiro mais próximo pela longitude e latitude.",
+        "parameters": [
+          {
+            "name": "lng",
+            "description": "longitude",
+            "type": "string",
+            "in": "query"
+          },
+          {
+            "name": "lat",
+            "description": "latitude",
+            "type": "string",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Parceiro mais próximo econtrado.",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "400": {
+            "description": "Nao há parceiros próximos.",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "404": {
+            "description": "Parceiro nao encontrado.",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Partner"
+        ],
+        "description": "Endpoint para deletar parceiro pelo id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID do usuário."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Parceiro deletado.",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "400": {
+            "description": "Parceiro nao encontrado.",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "500": {
+            "description": "Erro interno do servidor.",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "tradingName": {
+      "type": "string",
+      "example": "Adega Emporio"
+    },
+    "ownerName": {
+      "type": "string",
+      "example": "Eduardo Pipoca"
+    },
+    "document": {
+      "type": "string",
+      "example": "82.666.231/0001-01"
+    },
+    "coverageArea": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "example": "MultiPolygon"
+        },
+        "coordinates": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "example": [
+                  -67.83039,
+                  -9.95782
+                ],
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "example": "Point"
+        },
+        "coordinates": {
+          "type": "array",
+          "example": [
+            -67.81702,
+            -9.970223
+          ],
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  },
+  "/list": {
+    "get": {
+      "tags": [
+        "Partner"
+      ],
+      "description": "Endpoint para listar todos os parceiros.",
+      "parameters": [
+        {
+          "$ref": "#/parameters/list"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Parceiros listados.",
+          "schema": {
+            "$ref": "#/definitions"
+          }
+        }
+      }
+    }
+  },
+  "/find/{id}": {
+    "get": {
+      "tags": [
+        "Partner"
+      ],
+      "description": "Endpoint para pesquisar parceiro pelo id.",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "ID do usuário."
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Parceiro encontrado.",
+          "schema": {
+            "$ref": "#/definitions"
+          }
+        },
+        "404": {
+          "description": "Parceiro não encontrado.",
+          "schema": {
+            "$ref": "#/definitions"
+          }
+        },
+        "500": {
+          "description": "Erro interno do servidor.",
+          "schema": {
+            "$ref": "#/definitions"
+          }
+        }
+      }
+    }
+  },
+  "/nearest": {
+    "get": {
+      "tags": [
+        "Partner"
+      ],
+      "description": "Endpoint para buscar parceiro mais próximo pela longitude e latitude.",
+      "parameters": [
+        {
+          "name": "lng",
+          "description": "longitude",
+          "type": "string",
+          "in": "query"
+        },
+        {
+          "name": "lat",
+          "description": "latitude",
+          "type": "string",
+          "in": "query"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Parceiro mais próximo econtrado.",
+          "schema": {
+            "$ref": "#/definitions"
+          }
+        },
+        "400": {
+          "description": "Nao há parceiros próximos.",
+          "schema": {
+            "$ref": "#/definitions"
+          }
+        },
+        "404": {
+          "description": "Parceiro nao encontrado.",
+          "schema": {
+            "$ref": "#/definitions"
+          }
+        }
+      }
+    }
+  },
+  "/delete/{id}": {
+    "delete": {
+      "tags": [
+        "Partner"
+      ],
+      "description": "Endpoint para deletar parceiro pelo id",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "ID do usuário."
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Parceiro deletado.",
+          "schema": {
+            "$ref": "#/definitions"
+          }
+        },
+        "400": {
+          "description": "Parceiro nao encontrado.",
+          "schema": {
+            "$ref": "#/definitions"
+          }
+        },
+        "500": {
+          "description": "Erro interno do servidor.",
+          "schema": {
+            "$ref": "#/definitions/"
+          }
+        }
+      }
+    }
+  }
+}
