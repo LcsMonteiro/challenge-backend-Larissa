@@ -3,13 +3,14 @@
 
 
 -[Documentação](http://localhost:5050/api-docs/)
+<br>
+
 -[Heroku](https://api-partners.herokuapp.com/)
+<br>
+
 -[GitHub](https://github.com/LcsMonteiro/ze-challenge-backend-Larissa)
+<br>
 
-
-- Acesso ao mongoAtlas
-challengeZeDelivery
-121314
 
 Esta aplicação é uma API que fornece informações de localizaçao de parceiros do Zé Delivery."
 
@@ -247,10 +248,10 @@ Dada uma localização pelo usuário da API (coordenadas long e lat), procure o 
 - Caso não queira fazer esse passo-a-passo é possivel acessar pelo docker, que é uma plataforma de armazenado em containers virtuais.Para utlizar é necessário baixa-lo [aqui](https://docs.docker.com/desktop/)
 -Para entender mais sobre docker, assista esse vídeo [aqui](https://www.youtube.com/watch?v=Kzcz-EVKBEQ);
 - Também é possivel acessar pelo heroku, pelas rotas:
-     => Listar todos parceiros (https://api-partners.herokuapp.com/partners/list)
-     => Pesquisa pelo id (https://api-partners.herokuapp.com/partners/find/610871e71715c390e6586606)
-     => A rota "/partners/nearest" não está funcionado no heroku.
-     => Para acessar as outras rotas, consulte a documentação. 
+* Listar todos parceiros (https://api-partners.herokuapp.com/partners/list)
+* Pesquisa pelo id (https://api-partners.herokuapp.com/partners/find/610871e71715c390e6586606)
+* A rota "/partners/nearest" não está funcionado no heroku.
+* Para acessar as outras rotas, consulte a documentação. 
 
 
 
