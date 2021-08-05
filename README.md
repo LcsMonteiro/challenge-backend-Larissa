@@ -2,7 +2,7 @@
 # ZE-CHALLENGE-Larissa
 
 
--[Documentação](http://localhost:5050/api-docs/)
+-[Documentação](https://api-partners.herokuapp.com/api-docs/)
 <br>
 
 -[Heroku](https://api-partners.herokuapp.com/)
@@ -158,7 +158,7 @@ Dada uma localização pelo usuário da API (coordenadas long e lat), procure o 
 - coverageArea: Multipolygon e obrigatória;
 - address Point e obrigatória;
 
-#### API deve retornar seguinte JSON:
+#### API deve retornar um JSON com o seguinte formato:
 
 ```jsx
 {
@@ -227,7 +227,7 @@ Dada uma localização pelo usuário da API (coordenadas long e lat), procure o 
       ]
     },
     "__v": 0
-  },
+  }
 ```
 
 <br>
@@ -251,7 +251,7 @@ Dada uma localização pelo usuário da API (coordenadas long e lat), procure o 
 * Listar todos parceiros (https://api-partners.herokuapp.com/partners/list)
 * Pesquisa pelo id (https://api-partners.herokuapp.com/partners/find/610871e71715c390e6586606)
 * A rota "/partners/nearest" não está funcionado no heroku.
-* Para acessar as outras rotas, consulte a documentação. 
+* Para mais informações sobre as rotas, consulte a documentação mencionada no inicio. 
 
 
 
