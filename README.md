@@ -2,7 +2,10 @@
 # ZE-CHALLENGE-Larissa
 
 
--[documentação](http://localhost:5050/api-docs/)
+-[Documentação](http://localhost:5050/api-docs/)
+-[Heroku](https://api-partners.herokuapp.com/)
+-[GitHub](https://github.com/LcsMonteiro/ze-challenge-backend-Larissa)
+
 
 - Acesso ao mongoAtlas
 challengeZeDelivery
@@ -36,7 +39,7 @@ Esta aplicação é uma API que fornece informações de localizaçao de parceir
 ## 📁 Arquitetura
 
 ```
-📁 PROJETO-BLACKAPI
+📁 ZE-CHALLENGE-LARISSA
    |
    |-  📁 src
    |    |
@@ -60,6 +63,8 @@ Esta aplicação é uma API que fornece informações de localizaçao de parceir
    |- 📄.eslintrc.json
    |- 📄 .gitignore
    |- 📄.prettierrc
+   |- 📄 docker-compose
+   |- 📄 Dockerfile
    |- 📄 package-lock.json
    |- 📄 package.json
    |- 📄 Procfile
@@ -225,6 +230,29 @@ Dada uma localização pelo usuário da API (coordenadas long e lat), procure o 
 ```
 
 <br>
+
+## Como acessar essa API
+
+- Baixe NodeJs em seu computador clicando [aqui](https://nodejs.org/en/download/);
+- Para instalar, siga um dos tutoriais disponibilizados [aqui](https://nodejs.org/pt-br/download/package-manager/);
+- Para baixar essa API poderá ser pelo terminal utilizando o gitclone, ou fazendo o dowloand em formato zip [aqui](https://github.com/LcsMonteiro/ze-challenge-backend-Larissa), clique no botão verde e as opções apareceram;
+- NodeJs e API baixada? Pelo terminal, acesse a pasta onde a API está e dê os seguintes comandos:
+* npm init - y 
+* npm install express
+* npm start
+- Com esses comandos será adicionado ao arquivo uma pasta com o nome "node_modules",dois arquivos com nome "package.json" e "package-lock.js".
+- Existem várias dependencias que podem ser instaladas para diversos fins, quer saber mais, clique [aqui](https://docs.npmjs.com/cli/v6/commands/npm-init)
+- Com esse passo-a-passo já é possível acessar a API.
+- Para acessar o banco de dados é necessario a instalação, esse projeto, foi - se utilizado MongoDB.
+- Caso não queira fazer esse passo-a-passo é possivel acessar pelo docker, que é uma plataforma de armazenado em containers virtuais.Para utlizar é necessário baixa-lo [aqui](https://docs.docker.com/desktop/)
+-Para entender mais sobre docker, assista esse vídeo [aqui](https://www.youtube.com/watch?v=Kzcz-EVKBEQ);
+- Também é possivel acessar pelo heroku, pelas rotas:
+     => Listar todos parceiros (https://api-partners.herokuapp.com/partners/list)
+     => Pesquisa pelo id (https://api-partners.herokuapp.com/partners/find/610871e71715c390e6586606)
+     => A rota "/partners/nearest" não está funcionado no heroku.
+     => Para acessar as outras rotas, consulte a documentação. 
+
+
 
 ## Projeto desenvolvido por: 
 
