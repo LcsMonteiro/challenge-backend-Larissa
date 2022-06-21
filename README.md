@@ -1,5 +1,5 @@
 
-# ZE-CHALLENGE-Larissa
+# CHALLENGE-Larissa
 
 
 -[Documentação](https://api-partners.herokuapp.com/api-docs/)
@@ -40,7 +40,7 @@ Esta aplicação é uma API que fornece informações de localizaçao de parceir
 ## 📁 Arquitetura
 
 ```
-📁 ZE-CHALLENGE-LARISSA
+📁 CHALLENGE-LARISSA
    |
    |-  📁 src
    |    |
